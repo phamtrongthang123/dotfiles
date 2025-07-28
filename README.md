@@ -11,6 +11,12 @@
 git clone https://github.com/phamtrongthang123/dotfiles.git ~/.config/dotfiles
 ```
 
+Or check out the latest version:
+```bash
+cd ~/.config/dotfiles
+git pull origin
+```
+
 2. **Create Neovim config directory (if it doesn't exist):**
 ```bash
 rm -rf ~/.config/nvim
