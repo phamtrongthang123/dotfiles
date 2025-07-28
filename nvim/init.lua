@@ -117,6 +117,42 @@ require("lazy").setup({
   {
     "junegunn/fzf.vim",
     dependencies = { "junegunn/fzf" }
+  },
+  -- colorscheme
+  {
+    "folke/tokyonight.nvim",
+    priority = 1000,
+    config = function()
+      -- Custom colors for your preferences
+      require("tokyonight").setup({
+        style = "night",
+                on_highlights = function(hl, colors)
+          -- Most code: white-purple
+          hl.Normal = { fg = "#E6D6FF" }  -- Light purple-white
+          hl.Function = { fg = "#E6D6FF" }
+          hl.Identifier = { fg = "#E6D6FF" }
+          hl.Keyword = { fg = "#D6C6FF" }  -- def, if, import, etc - more purple
+          hl.Conditional = { fg = "#D6C6FF" }  -- if, else, elif
+          hl.Repeat = { fg = "#D6C6FF" }  -- for, while
+          hl.Include = { fg = "#D6C6FF" }  -- import, from
+          hl.Statement = { fg = "#D6C6FF" }  -- return, pass, break
+          hl.StorageClass = { fg = "#D6C6FF" }  -- class, def
+          hl.Structure = { fg = "#D6C6FF" }  -- def, class
+          hl.Exception = { fg = "#D6C6FF" }  -- try, except, raise
+          hl.Operator = { fg = "#E6D6FF" }
+          hl.Number = { fg = "#E6D6FF" }
+          hl.Boolean = { fg = "#D6C6FF" }  -- True, False
+          hl.Constant = { fg = "#D6C6FF" }  -- None, True, False
+          
+          -- Comments: gray
+          hl.Comment = { fg = "#6B7280", italic = true }
+          
+          -- Strings: gray-purple
+          hl.String = { fg = "#B8A9C9" }  -- Gray-purple
+        end,
+      })
+      vim.cmd([[colorscheme tokyonight]])
+    end,
   }
 })
 
